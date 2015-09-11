@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.affinity.cordova.flurry_analytics"
+        version="1.0.0">
+    <name>Flurry Analytics</name>
+    <description>Flurry Analytics JavaScript wrapper for Cordova apps</description>
+    <license>Apache 2.0</license>
+    <keywords>flurry, analytics, cordova</keywords>
+    <author>Carlos "blakgeek" Lawton</author>
+    <repo>https://github.com/affinityis/cordova-flurry-analytics.git</repo>
+    <issue>https://github.com/affinityis/cordova-flurry-analytics/issues</issue>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/flurryAnalytics.js" name="FlurryAnalyticsPlugin">
+        <clobbers target="window.FlurryAnalytics" />
+        <clobbers target="plugins.FlurryAnalytics" />
+    </js-module>
+
+    <!-- Depend on ads plugin for FlurryAnalytics SDK -->
+    <dependency id="com.rjfun.cordova.flurryads"/>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FlurryAnalyticsPlugin">
+                <param name="ios-package" value="FlurryAnalyticsPlugin" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/Flurry.h" />
+        <header-file src="src/ios/FlurryAnalyticsPlugin.h" />
+        <source-file src="src/ios/FlurryAnalyticsPlugin.m" />
+
+        <framework src="SystemConfiguration.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="Security.framework" />
+    </platform>
+
+    <platform name="android">
+
+        <dependency id="com.google.playservices" />
+        <dependency id="android.support.v4" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FlurryAnalyticsPlugin">
+                <param name="android-package" value="com.affinity.cordova.flurry_analytics.FlurryAnalyticsPlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/FlurryAnalyticsPlugin.java" target-dir="src/com/affinity/cordova/flurry_analytics/" />
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+    </platform>
+
+</plugin>
