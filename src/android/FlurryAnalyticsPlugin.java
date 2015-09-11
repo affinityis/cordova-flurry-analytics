@@ -1,4 +1,4 @@
-package com.affinity.cordova.flurry_analytics;
+package com.affinity.cordova.flurryanalytics;
 
 import android.util.Log;
 import com.flurry.android.Constants;
