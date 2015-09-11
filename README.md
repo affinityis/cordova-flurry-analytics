@@ -1,6 +1,6 @@
 # Flurry Analytics Wrapper for Cordova
 
-FlurryAnalytics Cordova wrapper that depends on floatinghotpot/cordova-plugin-flurry for both Flurry SDKs.
+FlurryAnalytics Cordova wrapper that depends on floatinghotpot/cordova-plugin-flurry for the FlurryAnalytics SDK rather than including it.  Currently this means 5.3.0 support on Android and 5.4.0 support on iOS.
 
 This plugin is borrowed from https://github.com/blakgeek/cordova-plugin-flurryanalytics and heavily inspired by https://github.com/jfpsf/flurry-phonegap-plugin.
 
