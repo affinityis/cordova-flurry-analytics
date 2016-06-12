@@ -754,7 +754,7 @@ typedef enum {
  *
  *  After starting the location manager, you can set the location with Flurry. You can implement
  *  CLLocationManagerDelegate to be aware of when the location is updated. Below is an example 
- *  of how to use this method, after you have recieved a location update from the locationManager.
+ *  of how to use this method, after you have received a location update from the locationManager.
  *
  *  @code
  CLLocation *location = locationManager.location;
